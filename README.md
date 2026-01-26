@@ -33,9 +33,11 @@ As per the assessment requirements, the following technologies were utilized:
    git clone https://github.com/Joshtech-netizen/lendsqr-fe-test.git
 
 2. Install Dependencies:
+    ```bash
     npm install
 
 3. Start Development Server 
+  ```bash
     npm run dev
 
 ## 👨‍💻 Author
