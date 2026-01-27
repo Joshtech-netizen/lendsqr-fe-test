@@ -1,5 +1,5 @@
-@use '../../styles/variables' as vars;
-@use '../../styles/mixins' as m;
+@use '../styles/variables' as vars; 
+@use '../styles/mixins' as m;
 
 .layoutWrapper {
   display: flex;
