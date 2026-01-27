@@ -1,0 +1,61 @@
+@use './variables' as vars;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: vars.$font-family;
+  background-color: vars.$bg-color-light;
+  background: vars.$white;
+  color: vars.$text-main;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+input {
+  font-family: inherit;
+  outline: none;
+}
+
+// Global utility for the 500-record table responsiveness
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: vars.$white;
+  border: 1px solid;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(33, 63, 125, 0.2);
+    border-radius: 10px;
+  }
+}
