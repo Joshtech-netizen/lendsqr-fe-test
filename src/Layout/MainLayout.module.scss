@@ -1,0 +1,27 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as m;
+
+.layoutWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.contentBody {
+  display: flex;
+  flex: 1;
+  overflow: hidden; 
+}
+
+.mainContent {
+  flex: 1;
+  padding: 60px;
+  background-color: #FBFBFB;
+  overflow-y: auto; 
+  height: 100%;
+
+  @include m.mobile {
+    padding: 20px;
+  }
+}
