@@ -1,0 +1,100 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as m;
+
+.navbar {
+  height: 100px;
+  background-color: vars.$white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  @include m.mobile {
+    padding: 0 20px;
+  }
+}
+
+.logoSection {
+  .logo {
+    width: 145px;
+    @include m.mobile {
+      width: 100px;
+    }
+  }
+}
+
+.searchBar {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 40px;
+
+  @include m.mobile {
+    display: none; // Hide search bar on mobile for simplicity
+  }
+
+  input {
+    flex: 1;
+    padding: 10px 20px;
+    border: 1px solid rgba(84, 95, 125, 0.15);
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+
+    &::placeholder {
+      color: rgba(84, 95, 125, 0.7);
+      font-size: 14px;
+    }
+  }
+
+  .searchBtn {
+    background-color: vars.$primary-teal;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+  }
+}
+
+.profileSection {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  .docs {
+    color: vars.$primary-dark;
+    text-decoration: underline;
+    font-size: 16px;
+  }
+
+  .bellIcon {
+    color: vars.$primary-dark;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .name {
+      color: vars.$primary-dark;
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+}
