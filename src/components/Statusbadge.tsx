@@ -2,17 +2,16 @@ import React from 'react';
 import styles from './Statusbadge.module.scss';
 
 interface StatusBadgeProps {
-  status: 'Active' | 'Inactive' | 'Pending' | 'Blacklisted' | string;
+  status: string;
 }
 
 const StatusBadge: React.FC<StatusBadgeProps> = ({ status }) => {
-  // Convert status to lowercase to match CSS classes
-  const statusClass = status.toLowerCase();
+  const statusClass = status ? status.toLowerCase() : 'inactive';
 
   return (
-    <div className={`${styles.badge} ${styles[statusClass]}`}>
+    <span className={`${styles.badge} ${styles[statusClass]}`}>
       {status}
-    </div>
+    </span>
   );
 };
 
