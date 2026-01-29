@@ -11,12 +11,12 @@ const Navbar: React.FC = () => {
         <img src={logo} alt="Lendsqr" className={styles.logo} />
       </div>
 
-      <div className={styles.searchBar}>
-        <input type="text" placeholder="Search for anything" />
-        <button id={styles.searchBtn}>
-          <FaSearch className={styles.searchIcon} />
+        <div className={styles.searchBar}>
+         <input type="text" placeholder="Search for anything" />
+        <button className={styles.searchBtn}>
+        <FaSearch className={styles.searchIcon} />
         </button>
-      </div>
+          </div>
 
       <div className={styles.profileSection}>
         <a href="#" className={styles.docs}>Docs</a>
