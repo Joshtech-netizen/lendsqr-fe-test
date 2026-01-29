@@ -29,71 +29,44 @@
 
 .searchBar {
   display: flex;
+  align-items: center;
   width: 100%;
   max-width: 400px;
-  margin: 0 40px;
-
-  @include m.mobile {
-    display: none;
-  }
+  margin-left: 100px; 
 
   input {
     flex: 1;
-    padding: 10px 20px;
+    height: 40px;
+    padding: 0 20px;
     border: 1px solid rgba(84, 95, 125, 0.15);
-    border-right: none;
     border-radius: 8px 0 0 8px;
     outline: none;
+    font-size: 14px;
+    color: vars.$primary-dark;
 
     &::placeholder {
       color: rgba(84, 95, 125, 0.7);
-      font-size: 14px;
-    }
-  }
-
-.searchBar {
-  display: flex;
-  width: 100%;
-  max-width: 400px;
-  margin: 0 40px;
-
-  @include m.mobile {
-    display: none; 
-  }
-
-  input {
-    flex: 1;
-    padding: 10px 20px;
-    border: 1px solid rgba(84, 95, 125, 0.15);
-    border-right: none;
-    border-radius: 8px 0 0 8px;
-    outline: none;
-    height: 40px; 
-
-    &::placeholder {
-      color: rgba(84, 95, 125, 0.7);
-      font-size: 14px;
     }
   }
 
   .searchBtn {
-    background-color: vars.$primary-teal; 
-    color: white;
-    border: none;
     width: 56px;
     height: 40px;
+    background-color: #39CDCC !important; 
+    border: none !important; 
     border-radius: 0 8px 8px 0;
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: center; 
-    transition: background-color 0.3s;
+    justify-content: center;
+    padding: 0;
 
     &:hover {
-      background-color: darken(#39CDCC, 10%);
+      background-color: #2bbbb9 !important;
     }
 
     .searchIcon {
+      color: #ffffff !important;
       font-size: 14px;
     }
   }
