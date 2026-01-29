@@ -22,7 +22,7 @@ export interface IEducation {
   sector: string;
   duration: string;
   officeEmail: string;
-  monthlyIncome: [string, string]; // Min and Max
+  monthlyIncome: [string, string]; 
   loanRepayment: string;
 }
 
@@ -41,16 +41,14 @@ export interface IGuarantor {
 }
 
 export interface IUser {
-  id: string;
-  createdAt: string;
+  id: number; 
   orgName: string;
   userName: string;
   email: string;
   phoneNumber: string;
-  lastActiveDate: string;
-  profile: IProfile;
-  guarantor: IGuarantor;
-  socials: ISocials;
-  education: IEducation;
-  status: UserStatus;
+  createdAt: string;
+  status: string;
+  profile: string; 
+  education: string; 
+  guarantor: string; 
 }
