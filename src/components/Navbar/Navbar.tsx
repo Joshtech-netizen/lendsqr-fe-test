@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
       <div className={styles.searchBar}>
         <input type="text" placeholder="Search for anything" />
         <button id={styles.searchBtn}>
-          <FaSearch />
+          <FaSearch className={styles.searchIcon} />
         </button>
       </div>
 
