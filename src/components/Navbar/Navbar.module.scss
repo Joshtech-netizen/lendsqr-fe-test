@@ -34,7 +34,7 @@
   margin: 0 40px;
 
   @include m.mobile {
-    display: none; // Hide search bar on mobile for simplicity
+    display: none;
   }
 
   input {
@@ -51,13 +51,51 @@
     }
   }
 
+.searchBar {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 40px;
+
+  @include m.mobile {
+    display: none; 
+  }
+
+  input {
+    flex: 1;
+    padding: 10px 20px;
+    border: 1px solid rgba(84, 95, 125, 0.15);
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    height: 40px; 
+
+    &::placeholder {
+      color: rgba(84, 95, 125, 0.7);
+      font-size: 14px;
+    }
+  }
+
   .searchBtn {
-    background-color: vars.$primary-teal;
+    background-color: vars.$primary-teal; 
     color: white;
     border: none;
-    padding: 0 15px;
+    width: 56px;
+    height: 40px;
     border-radius: 0 8px 8px 0;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken(#39CDCC, 10%);
+    }
+
+    .searchIcon {
+      font-size: 14px;
+    }
   }
 }
 
