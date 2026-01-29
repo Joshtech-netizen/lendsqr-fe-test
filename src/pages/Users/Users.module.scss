@@ -1,0 +1,74 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as m;
+
+.usersContainer {
+  padding-bottom: 40px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  margin-bottom: 40px;
+
+  @include m.mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tableWrapper {
+  background-color: vars.$white;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  overflow-x: auto; // Essential for mobile responsiveness
+}
+
+.userTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+
+  th {
+    padding: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: vars.$text-secondary;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+  }
+
+  td {
+    padding: 20px;
+    font-size: 14px;
+    color: vars.$text-secondary;
+    border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+    white-space: nowrap; // Keeps rows clean
+  }
+
+  .actionIcon {
+    cursor: pointer;
+    color: vars.$text-secondary;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: vars.$text-secondary;
+
+  button {
+    background: none;
+    border: 1px solid rgba(33, 63, 125, 0.1);
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
