@@ -2,7 +2,18 @@
 @use '../../styles/mixins' as m;
 
 .usersContainer {
-  padding-bottom: 40px;
+  padding: 30px 60px;
+  
+  @include m.mobile {
+    padding: 20px;
+  }
+
+  .pageTitle {
+    color: vars.$primary-dark;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
 }
 
 .cardsGrid {
@@ -21,7 +32,7 @@
   border: 1px solid rgba(33, 63, 125, 0.06);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
   border-radius: 4px;
-  overflow-x: auto; // Essential for mobile responsiveness
+  overflow-x: auto;
 }
 
 .userTable {
@@ -36,6 +47,13 @@
     color: vars.$text-secondary;
     text-transform: uppercase;
     border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+    white-space: nowrap;
+
+    .filterIcon {
+      margin-left: 10px;
+      cursor: pointer;
+      vertical-align: middle;
+    }
   }
 
   td {
@@ -43,32 +61,97 @@
     font-size: 14px;
     color: vars.$text-secondary;
     border-bottom: 1px solid rgba(33, 63, 125, 0.1);
-    white-space: nowrap; // Keeps rows clean
+    white-space: nowrap;
+    vertical-align: middle;
   }
 
-  .actionIcon {
+  .actionCell {
     cursor: pointer;
-    color: vars.$text-secondary;
+    text-align: right;
+    padding-right: 30px;
   }
 }
 
-.pagination {
+
+.paginationFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  color: vars.$text-secondary;
+  padding: 20px 30px;
+  
+  @include m.mobile {
+    flex-direction: column;
+    gap: 20px;
+  }
 
-  button {
-    background: none;
-    border: 1px solid rgba(33, 63, 125, 0.1);
-    padding: 5px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
+  .showingInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: vars.$text-secondary;
+
+    select {
+      background: rgba(33, 63, 125, 0.1);
+      border: none;
+      border-radius: 4px;
+      padding: 7px 12px;
+      font-weight: 600;
+      color: vars.$primary-dark;
+      cursor: pointer;
+      outline: none;
     }
   }
+
+  .pageNavigation {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .navBtn {
+      background: rgba(33, 63, 125, 0.1);
+      border: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: vars.$text-secondary;
+      font-size: 12px;
+
+      &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+    }
+
+    .pageItem {
+      cursor: pointer;
+      font-size: 14px;
+      color: rgba(84, 95, 125, 0.6);
+      transition: all 0.2s ease;
+
+      &.active {
+        font-weight: 700;
+        color: vars.$text-secondary; 
+      }
+
+      &.dots {
+        cursor: default;
+      }
+
+      &:hover:not(.dots):not(.active) {
+        color: vars.$primary-dark;
+      }
+    }
+  }
+}
+
+.statusMsg {
+  text-align: center;
+  padding: 50px;
+  color: vars.$text-secondary;
+  font-size: 16px;
 }
