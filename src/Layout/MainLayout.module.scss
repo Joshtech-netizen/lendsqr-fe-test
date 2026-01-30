@@ -16,12 +16,12 @@
 
 .mainContent {
   flex: 1;
-  padding: 60px;
+  padding: 0; 
   background-color: #FBFBFB;
   overflow-y: auto; 
   height: 100%;
+}
 
-  @include m.mobile {
+@include m.mobile {
     padding: 20px;
   }
-}
