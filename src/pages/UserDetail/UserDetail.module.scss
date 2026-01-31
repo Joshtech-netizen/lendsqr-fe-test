@@ -1,0 +1,116 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as m;
+
+.detailsContainer {
+  padding: 30px 60px;
+  background-color: #FBFBFB;
+
+  @include m.mobile { padding: 20px; }
+
+  .backBtn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: vars.$text-secondary;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+}
+
+.headerActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+
+  .pageTitle { font-size: 24px; color: vars.$primary-dark; }
+
+  .actionButtons {
+    display: flex;
+    gap: 20px;
+
+    button {
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .blacklistBtn { border: 1px solid #E4033B; color: #E4033B; background: none; }
+    .activateBtn { border: 1px solid vars.$primary-teal; color: vars.$primary-teal; background: none; }
+  }
+}
+
+.profileSummary {
+  background: vars.$white;
+  padding: 30px 30px 0 30px;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  margin-bottom: 30px;
+
+  .mainInfo {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+
+    @include m.mobile { flex-direction: column; text-align: center; }
+
+    .avatar img { width: 100px; height: 100px; border-radius: 50%; }
+
+    .divider { width: 1px; height: 80px; background: rgba(84, 95, 125, 0.2); }
+
+    .stars .activeStar { color: #E9B200; }
+  }
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  
+  button {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s;
+
+    &.activeTab { border-bottom: 2px solid vars.$primary-teal; color: vars.$primary-teal; }
+  }
+}
+
+.infoContent {
+  background: vars.$white;
+  padding: 30px;
+  border-radius: 4px;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+
+  .infoSection {
+    border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+
+    h3 { font-size: 16px; margin-bottom: 30px; color: vars.$primary-dark; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 30px;
+
+      @include m.mobile { grid-template-columns: repeat(2, 1fr); }
+
+      .item {
+        label { display: block; font-size: 12px; color: vars.$text-secondary; margin-bottom: 8px; }
+        p { font-size: 14px; font-weight: 500; color: vars.$text-secondary; }
+      }
+    }
+  }
+}
