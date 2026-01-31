@@ -1,4 +1,3 @@
-
 import type { IUser } from '../types/users';
 
 export const fetchUsers = async (): Promise<IUser[]> => {
@@ -6,19 +5,13 @@ export const fetchUsers = async (): Promise<IUser[]> => {
     const response = await fetch('/data/users.json'); 
     
     if (!response.ok) {
-      console.error(`HTTP Error: ${response.status} - ${response.statusText}`);
-      return [];
+      throw new Error(`HTTP Error: ${response.status}`);
     }
 
-    const text = await response.text(); 
-    try {
-      return JSON.parse(text); 
-    } catch (parseError) {
-      console.error("JSON Parse Error: Your users.json has a syntax error.", parseError);
-      return [];
-    }
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.error("Network Error: Could not reach the file.", error);
+    console.error("API Fetch Error:", error);
     return [];
   }
 };
