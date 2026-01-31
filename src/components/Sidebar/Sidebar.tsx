@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { 
-  FaBriefcase, FaHome, FaUsers, FaUserFriends, FaSackDollar, 
-  FaHandshake, FaPiggyBank, FaHandHoldingDollar, FaUserCheck, 
+  FaBriefcase, FaHome, FaUsers, FaUserFriends, 
+  FaHandshake, FaPiggyBank, FaHandHoldingUsd, FaUserCheck, 
   FaUserTimes, FaChartBar, FaSlidersH, FaPercent, FaClipboardList 
 } from 'react-icons/fa';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
@@ -24,7 +24,7 @@ const Sidebar: React.FC = () => {
         </NavLink>
 
         <div className={styles.section}>
-          <p className={styles.sectionTitle}>CUSTOMERS</p>
+          <p className={styles.label}>CUSTOMERS</p>
           <NavLink to="/users" className={styles.link}>
             <FaUsers className={styles.icon} />
             <span>Users</span>
@@ -34,7 +34,7 @@ const Sidebar: React.FC = () => {
             <span>Guarantors</span>
           </NavLink>
           <NavLink to="/loans" className={styles.link}>
-            <FaSackDollar className={styles.icon} />
+            <FaHandHoldingUsd className={styles.icon} />
             <span>Loans</span>
           </NavLink>
           <NavLink to="/decision-models" className={styles.link}>
@@ -46,7 +46,7 @@ const Sidebar: React.FC = () => {
             <span>Savings</span>
           </NavLink>
           <NavLink to="/loan-requests" className={styles.link}>
-            <FaHandHoldingDollar className={styles.icon} />
+            <FaHandHoldingUsd className={styles.icon} />
             <span>Loan Requests</span>
           </NavLink>
           <NavLink to="/whitelist" className={styles.link}>
@@ -60,13 +60,13 @@ const Sidebar: React.FC = () => {
         </div>
 
         <div className={styles.section}>
-          <p className={styles.sectionTitle}>BUSINESSES</p>
+          <p className={styles.label}>BUSINESSES</p>
           <NavLink to="/organization" className={styles.link}>
             <FaBriefcase className={styles.icon} />
             <span>Organization</span>
           </NavLink>
           <NavLink to="/loan-products" className={styles.link}>
-            <FaHandHoldingDollar className={styles.icon} />
+            <FaHandHoldingUsd className={styles.icon} />
             <span>Loan Products</span>
           </NavLink>
           <NavLink to="/savings-products" className={styles.link}>
@@ -74,7 +74,7 @@ const Sidebar: React.FC = () => {
             <span>Savings Products</span>
           </NavLink>
           <NavLink to="/fees-and-charges" className={styles.link}>
-            <FaSackDollar className={styles.icon} />
+            <FaHandHoldingUsd className={styles.icon} />
             <span>Fees and Charges</span>
           </NavLink>
           <NavLink to="/transactions" className={styles.link}>
@@ -100,7 +100,7 @@ const Sidebar: React.FC = () => {
         </div>
 
         <div className={styles.section}>
-          <p className={styles.sectionTitle}>SETTINGS</p>
+          <p className={styles.label}>SETTINGS</p>
           <NavLink to="/preferences" className={styles.link}>
             <FaSlidersH className={styles.icon} />
             <span>Preferences</span>
