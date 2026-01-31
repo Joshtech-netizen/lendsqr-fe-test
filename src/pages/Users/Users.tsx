@@ -153,11 +153,16 @@ const Users: React.FC = () => {
                 }).replace(',', '')}</td>
                 <td><StatusBadge status={user.status} /></td>
                 <td className={styles.actionCell}>
-                  <FaEllipsisV onClick={() => setActiveActionMenu(activeActionMenu === user.id ? null : user.id)} />
-                  
-                  {/* Action Popover */}
+                  <FaEllipsisV
+                    onClick={(e) => {
+                      e.stopPropagation(); 
+                      setActiveActionMenu(activeActionMenu === user.id ? null : user.id);
+                      console.log("Opening menu for user:", user.id); 
+                    }}
+                  />
+
                   {activeActionMenu === user.id && (
-                    <div className={styles.actionPopover}>
+                    <div className={styles.actionPopover} ref={actionMenuRef}>
                       <button onClick={() => navigate(`/users/${user.id}`)}>
                         <FaEye /> View Details
                       </button>
