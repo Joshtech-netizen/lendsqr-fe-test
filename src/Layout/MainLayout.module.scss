@@ -20,8 +20,8 @@
   background-color: #FBFBFB;
   overflow-y: auto; 
   height: 100%;
-}
 
-@include m.mobile {
-    padding: 20px;
+  @include m.mobile {
+    padding: 20px; 
   }
+}
