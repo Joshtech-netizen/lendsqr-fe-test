@@ -4,6 +4,7 @@ import MainLayout from './Layout/MainLayout';
 import Login from './pages/Login/Login';
 import Dashboard from './pages/Dashboard/Dashboard'; 
 import Users from './pages/Users/Users'; 
+import UserDetail from './pages/UserDetail/UserDetail';
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
           <Route index element={<Navigate to="/dashboard" replace />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="users" element={<Users />} />
+          <Route path="users/:id" element={<UserDetail />} />
         </Route>
       </Routes>
     </Router>

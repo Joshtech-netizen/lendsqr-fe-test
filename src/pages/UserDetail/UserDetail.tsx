@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaStar, FaRegStar } from 'react-icons/fa';
 import type { IUser } from '../../types/users';
-import styles from './UserDetails.module.scss';
+import styles from './UserDetail.module.scss';
 
-const UserDetails: React.FC = () => {
+const UserDetail: React.FC = () => {
   const navigate = useNavigate();
   
   // Lazy initialization from localStorage to satisfy React performance rules
@@ -118,4 +118,4 @@ const UserDetails: React.FC = () => {
     </div>
   );
 };
-export default UserDetails;
+export default UserDetail;

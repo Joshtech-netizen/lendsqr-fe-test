@@ -26,6 +26,11 @@ const Users: React.FC = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [activeActionMenu, setActiveActionMenu] = useState<number | null>(null);
 
+  const handleViewDetails = (user: IUser) => {
+    // Store the user in localStorage as required by the assessment
+    localStorage.setItem('lendsqr_selected_user', JSON.stringify(user));
+    navigate(`/users/${user.id}`);
+  };
   // Fetch users on component mount
   useEffect(() => {
     const loadData = async () => {
@@ -51,6 +56,7 @@ const Users: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  
   // Pagination Logic
   const totalUsers = users.length;
   const totalPages = Math.ceil(totalUsers / itemsPerPage);
@@ -163,7 +169,7 @@ const Users: React.FC = () => {
 
                   {activeActionMenu === user.id && (
                     <div className={styles.actionPopover} ref={actionMenuRef}>
-                      <button onClick={() => navigate(`/users/${user.id}`)}>
+                      <button onClick={() => handleViewDetails(user)}>
                         <FaEye /> View Details
                       </button>
                       <button><FaUserTimes /> Blacklist User</button>
