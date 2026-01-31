@@ -18,42 +18,42 @@ const Sidebar: React.FC = () => {
       </div>
 
       <nav className={styles.navMenu}>
-        <NavLink to="/dashboard" className={({ isActive }) => isActive ? styles.activeLink : styles.link}>
+        <NavLink to="/dashboard" end className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}>
           <FaHome className={styles.icon} />
           <span>Dashboard</span>
         </NavLink>
 
         <div className={styles.section}>
           <p className={styles.label}>CUSTOMERS</p>
-          <NavLink to="/users" className={styles.link}>
+          <NavLink to="/users" className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}>
             <FaUsers className={styles.icon} />
             <span>Users</span>
           </NavLink>
-          <NavLink to="/guarantors" className={styles.link}>
+          <NavLink to="/guarantors" className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}>
             <FaUserFriends className={styles.icon} />
             <span>Guarantors</span>
           </NavLink>
-          <NavLink to="/loans" className={styles.link}>
+          <NavLink to="/loans" className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}>
             <FaHandHoldingUsd className={styles.icon} />
             <span>Loans</span>
           </NavLink>
-          <NavLink to="/decision-models" className={styles.link}>
+          <NavLink to="/decision-models" className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}>
             <FaHandshake className={styles.icon} />
             <span>Decision Models</span>
           </NavLink>
-          <NavLink to="/savings" className={styles.link}>
+          <NavLink to="/savings" className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}>
             <FaPiggyBank className={styles.icon} />
             <span>Savings</span>
           </NavLink>
-          <NavLink to="/loan-requests" className={styles.link}>
+          <NavLink to="/loan-requests" className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}>
             <FaHandHoldingUsd className={styles.icon} />
             <span>Loan Requests</span>
           </NavLink>
-          <NavLink to="/whitelist" className={styles.link}>
+          <NavLink to="/whitelist" className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}>
             <FaUserCheck className={styles.icon} />
             <span>Whitelist</span>
           </NavLink>
-          <NavLink to="/karma" className={styles.link}>
+          <NavLink to="/karma" className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}>
             <FaUserTimes className={styles.icon} />
             <span>Karma</span>
           </NavLink>
