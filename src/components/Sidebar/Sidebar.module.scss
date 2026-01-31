@@ -1,0 +1,93 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as m;
+
+.sidebar {
+  width: 283px; 
+  background-color: vars.$white;
+  height: calc(100vh - 100px); 
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+  padding: 30px 0;
+  overflow-y: auto;
+  flex-shrink: 0;
+
+  @include m.mobile {
+    display: none; 
+  }
+
+  
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(33, 63, 125, 0.1);
+    border-radius: 10px;
+  }
+}
+
+.switchOrg {
+  display: flex;
+  align-items: center;
+  padding: 0 30px 40px;
+  color: vars.$primary-dark;
+  cursor: pointer;
+  font-size: 16px;
+
+  .icon {
+    font-size: 16px;
+  }
+
+  span {
+    margin: 0 10px;
+    font-weight: 400;
+  }
+
+  .arrow {
+    margin-left: auto;
+    font-size: 20px;
+  }
+}
+
+.section {
+  margin-bottom: 30px; 
+
+  .label {
+    font-size: 12px;
+    font-weight: 600;
+    color: vars.$text-secondary;
+    margin: 0 0 15px 30px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+.link, .active {
+  display: flex;
+  align-items: center;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-size: 16px;
+  color: vars.$primary-dark;
+  opacity: 0.6;
+  transition: all 0.2s ease-in-out;
+  border-left: 3px solid transparent;
+
+  .icon {
+    margin-right: 12px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  &:hover {
+    background-color: rgba(57, 205, 204, 0.06);
+    opacity: 1;
+    color: vars.$primary-dark;
+  }
+}
+
+.active {
+  opacity: 1;
+  background-color: rgba(57, 205, 204, 0.06);
+  border-left: 3px solid vars.$primary-teal; 
+  color: vars.$primary-dark;
+}
