@@ -44,21 +44,32 @@
   border-collapse: collapse;
   table-layout: fixed; 
 
-  th, td {
-    padding: 15px 12px; 
-    font-size: 12px; 
+  th {
+    padding: 20px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #545F7D;
+    text-transform: uppercase;
     text-align: left;
     border-bottom: 1px solid rgba(33, 63, 125, 0.1);
-    vertical-align: middle;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap; 
+    
+    .filterIcon {
+      margin-left: 8px;
+      font-size: 14px;
+      vertical-align: middle;
+      cursor: pointer;
+    }
   }
 
-  th {
-    font-weight: 600;
-    color: vars.$text-secondary;
-    text-transform: uppercase;
+  td {
+    padding: 20px 12px;
+    font-size: 14px; 
+    font-weight: 400;
+    color: #545F7D;
+    border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   th:nth-child(1) { width: 15%; } 
