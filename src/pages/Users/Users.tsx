@@ -83,23 +83,45 @@ const Users: React.FC = () => {
       <div className={styles.tableWrapper}>
         {/* Filter Popover */}
         {showFilter && (
-          <div className={styles.filterPopover}>
+          <div className={styles.filterPopover} ref={filterRef}>
             <div className={styles.filterGroup}>
               <label>Organization</label>
-              <select><option>Select</option></select>
+              <select><option value="">Select</option></select>
             </div>
+
             <div className={styles.filterGroup}>
               <label>Username</label>
               <input type="text" placeholder="User" />
             </div>
+
             <div className={styles.filterGroup}>
               <label>Email</label>
               <input type="email" placeholder="Email" />
             </div>
+
             <div className={styles.filterGroup}>
               <label>Date</label>
               <input type="date" />
             </div>
+
+            {/* Added Phone Number Field */}
+            <div className={styles.filterGroup}>
+              <label>Phone Number</label>
+              <input type="text" placeholder="Phone Number" />
+            </div>
+
+            {/* Added Status Field */}
+            <div className={styles.filterGroup}>
+              <label>Status</label>
+              <select>
+                <option value="">Select</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+                <option value="pending">Pending</option>
+                <option value="blacklisted">Blacklisted</option>
+              </select>
+            </div>
+
             <div className={styles.filterButtons}>
               <button className={styles.resetBtn}>Reset</button>
               <button className={styles.filterBtn}>Filter</button>
