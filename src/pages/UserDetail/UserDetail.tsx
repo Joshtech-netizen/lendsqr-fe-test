@@ -7,7 +7,7 @@ import styles from './UserDetail.module.scss';
 const UserDetail: React.FC = () => {
   const navigate = useNavigate();
   
-  // Lazy initialization from localStorage to satisfy React performance rules
+  
   const [user] = useState<IUser | null>(() => {
     const savedUser = localStorage.getItem('lendsqr_selected_user');
     try {
