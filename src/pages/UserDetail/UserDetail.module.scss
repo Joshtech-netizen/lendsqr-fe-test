@@ -72,6 +72,19 @@
 .tabs {
   display: flex;
   justify-content: space-between;
+
+    @include m.mobile {
+    overflow-x: auto; 
+    white-space: nowrap;
+    gap: 10px;
+    padding-bottom: 5px;
+
+    /* Hide scrollbar while maintaining functionality */
+    scrollbar-width: none; 
+    &::-webkit-scrollbar {
+      display: none; 
+    }
+  }
   
   button {
     padding: 10px 20px;
