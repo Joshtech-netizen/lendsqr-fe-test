@@ -26,11 +26,19 @@
   align-items: center;
   margin-bottom: 40px;
 
+  @include m.mobile {
+    flex-direction: column; // Responsive stacking
+    align-items: flex-start;
+    gap: 20px;
+  }
+
   .pageTitle { font-size: 24px; color: vars.$primary-dark; }
 
   .actionButtons {
     display: flex;
     gap: 20px;
+    
+    @include m.mobile { width: 100%; justify-content: space-between; }
 
     button {
       padding: 12px 18px;
@@ -38,6 +46,7 @@
       font-weight: 600;
       font-size: 14px;
       cursor: pointer;
+      @include m.mobile { padding: 10px 14px; font-size: 12px; }
     }
 
     .blacklistBtn { border: 1px solid #E4033B; color: #E4033B; background: none; }
@@ -52,6 +61,7 @@
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
   border-radius: 4px;
   margin-bottom: 30px;
+  color: #213F7D; // Primary brand color
 
   .mainInfo {
     display: flex;
@@ -59,11 +69,25 @@
     gap: 30px;
     margin-bottom: 50px;
 
-    @include m.mobile { flex-direction: column; text-align: center; }
+    @include m.mobile { 
+      flex-direction: column; 
+      text-align: center; 
+      gap: 20px;
+    }
 
     .avatar img { width: 100px; height: 100px; border-radius: 50%; }
 
-    .divider { width: 1px; height: 80px; background: rgba(84, 95, 125, 0.2); }
+    .divider { 
+      width: 1px; 
+      height: 80px; 
+      background: rgba(33, 63, 125, 0.2); 
+      @include m.mobile { display: none; } // Hide divider on mobile
+    }
+
+    .infoBlock {
+      h2 { color: #213F7D; font-size: 22px; margin-bottom: 8px; }
+      p { color: #545F7D; font-size: 14px; }
+    }
 
     .stars .activeStar { color: #E9B200; }
   }
@@ -73,17 +97,13 @@
   display: flex;
   justify-content: space-between;
 
-    @include m.mobile {
+  @include m.mobile {
     overflow-x: auto; 
     white-space: nowrap;
     gap: 10px;
     padding-bottom: 5px;
-
-    /* Hide scrollbar while maintaining functionality */
     scrollbar-width: none; 
-    &::-webkit-scrollbar {
-      display: none; 
-    }
+    &::-webkit-scrollbar { display: none; }
   }
   
   button {
@@ -111,18 +131,23 @@
     padding-bottom: 30px;
     margin-bottom: 30px;
 
-    h3 { font-size: 16px; margin-bottom: 30px; color: vars.$primary-dark; }
+    &:last-child { border-bottom: none; }
+
+    h3 { font-size: 16px; margin-bottom: 30px; color: #213F7D; } // Brand primary color
 
     .grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 30px;
 
-      @include m.mobile { grid-template-columns: repeat(2, 1fr); }
+      @include m.mobile { 
+        grid-template-columns: repeat(2, 1fr); // High-fidelity grid
+        gap: 20px 10px; 
+      }
 
       .item {
-        label { display: block; font-size: 12px; color: vars.$text-secondary; margin-bottom: 8px; }
-        p { font-size: 14px; font-weight: 500; color: vars.$text-secondary; }
+        label { display: block; font-size: 12px; color: vars.$text-secondary; margin-bottom: 8px; text-transform: uppercase; }
+        p { font-size: 14px; font-weight: 500; color: #545F7D; word-break: break-word; }
       }
     }
   }
