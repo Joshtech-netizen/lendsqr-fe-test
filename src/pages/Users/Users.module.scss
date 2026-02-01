@@ -31,13 +31,36 @@
   border-radius: 4px;
   width: 100%;
   position: relative; 
-  overflow: visible; 
+  overflow: visible;
+  overflow-x: auto;
+ scroll-behavior: smooth;
+  
+  /* Firefox 64+ & Chrome 121+ */
+  scrollbar-width: thin; 
+  scrollbar-color: rgba(33, 63, 125, 0.2) transparent;
+
+  /* Safari and older Chrome/Edge/Samsung */
+  &::-webkit-scrollbar {
+    height: 6px; // Horizontal scrollbar height
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(33, 63, 125, 0.2);
+    border-radius: 10px;
 }
 
 .userTable {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed; 
+
+  @include m.mobile {
+    min-width: 900px; 
+  }
 
   .actionCell {
     position: relative; 
@@ -196,8 +219,9 @@
   padding: 20px 30px;
   
   @include m.mobile {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: column; // Stacks pagination elements vertically
+    gap: 25px;
+    text-align: center;
   }
 
   .showingInfo {
@@ -222,6 +246,10 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    @include m.mobile {
+      width: 100%;
+      justify-content: center; // Centers page numbers on mobile
+    }
 
     .navBtn {
       background: rgba(33, 63, 125, 0.1);
@@ -257,4 +285,5 @@
   text-align: center;
   padding: 50px;
   color: vars.$text-secondary;
+}
 }
