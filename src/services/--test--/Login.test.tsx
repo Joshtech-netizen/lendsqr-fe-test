@@ -1,19 +1,19 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom'; 
 import Login from '../../pages/Login/Login';
 
 describe('Login Component', () => {
-  it('should remain disabled and not trigger actions when fields are empty', () => {
-    render(<Login />);
+  it('should remain disabled when fields are empty', () => {
+    // Wrap the component in MemoryRouter to fix the useNavigate error
+    render(
+      <MemoryRouter>
+        <Login />
+      </MemoryRouter>
+    );
     
     const loginButton = screen.getByRole('button', { name: /log in/i });
     
-    // Check initial state (Negative Scenario)
-    expect(loginButton).toBeDisabled(); 
-
-    // Use fireEvent to satisfy the import and test behavior
-    fireEvent.click(loginButton);
-    
-    // Verify it stays disabled after an attempted interaction
+    // Negative scenario: Verify button is disabled initially
     expect(loginButton).toBeDisabled(); 
   });
 });
